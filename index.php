@@ -4,15 +4,17 @@
     //Partie 1:
     //1.
     echo "<br>Partie 2:<br>1.";
-    $findeleves = $dbPDO->prepare("SELECT nom,prenom FROM etudiants");
+    $findeleves = $dbPDO->prepare("SELECT id,nom,prenom FROM etudiants");
     $findeleves->execute();
     $eleves = $findeleves->fetchAll(PDO::FETCH_CLASS);
     echo '<ul>';
     foreach($eleves as $eleve) {
-        echo '<li>'.$eleve->prenom.' '.$eleve->nom.'</li>';
+        echo '<li>'.$eleve->prenom.' '.$eleve->nom.' <a href="http://localhost/PHP_starter\PHP_starter\exo\TP-SQL-PHP\exo9-tp\Views/modif_etudiant.php?id='.$eleve->id.'">Modidier</a>';
     }
-    echo '</ul>2.';
-
+    echo '</ul>'
+?>
+2.
+<?php
     //2.
     $findclasses = $dbPDO->prepare("SELECT libelle FROM classes");
     $findclasses->execute();

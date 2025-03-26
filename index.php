@@ -62,3 +62,20 @@
     <input type="text" name="prenom" />
     <input type="submit" value="Valider" />
 </form>
+<?php
+    //Partie 4:
+    //1.
+    echo "<br>Partie 4:<br>1.<br>";
+    $updateEleve = $dbPDO->prepare("Update etudiants SET prenom = :prenom, nom = :nom, classe_id = :classe_id WHERE id = :id");
+    $eleveModifie = $updateEleve->execute([
+        'nom' => "Pinaise",
+        'prenom' => "Homer  ",
+        'classe_id' => 4,
+        'id' => 3,
+    ]); 
+    if($eleveModifie){
+        echo "L'étudiant a été modifié !";
+    }else{
+        echo "La requete a échoué";
+    }
+?>

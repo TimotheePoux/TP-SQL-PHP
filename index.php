@@ -44,8 +44,12 @@
     if($ajoutMatiere){
         echo "La matière a été ajoutée !";
     }else{
-        echo "La requette a échoué";
+        echo "La requete a échoué";
     }
     echo "<br>2."
-
 ?>
+<form action="exo9-tp/Views/nouvelle_matiere.php" method="post">
+    <label>Nom de la matière: </label>
+    <input type="text" name="libelle" />
+    <input type="submit" value="Valider" />
+</form>

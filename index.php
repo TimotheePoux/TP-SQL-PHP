@@ -71,7 +71,7 @@
     $updateEleve = $dbPDO->prepare("Update etudiants SET prenom = :prenom, nom = :nom, classe_id = :classe_id WHERE id = :id");
     $eleveModifie = $updateEleve->execute([
         'nom' => "Pinaise",
-        'prenom' => "Homer  ",
+        'prenom' => "Homer",
         'classe_id' => 4,
         'id' => 3,
     ]); 
